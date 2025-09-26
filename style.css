@@ -1,0 +1,335 @@
+/* Paleta de cores */
+:root {
+    --bg-color: #000000;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --accent-color: #ffffff;
+    --accent-glow: #e0e0e0;
+    --card-bg: #1a1a1a;
+    --hover-bg: #2b2b2b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* style.css */
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imagens-site/background-code-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Mantém a imagem de fundo fixa durante a rolagem */
+}
+
+/* --- Navbar --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4rem; 
+    z-index: 1000;
+    /* Fundo removido para que a imagem da hero-section apareça por trás */
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    text-shadow: 0 0 5px rgba(0,0,0,0.5); /* Sombra para melhorar legibilidade */
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5); /* Sombra para melhorar legibilidade */
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: var(--accent-color);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    
+    /* IMAGEM DE FUNDO COM CAMADA ESCURA */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('imagens-site/Computer.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8rem; 
+    font-weight: 900;
+    color: var(--text-primary);
+    letter-spacing: -0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content .hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* --- Content Wrapper para outras seções --- */
+.content-wrapper {
+    max-width: 900px;
+    margin: 4rem auto; 
+    padding: 0 2rem;
+}
+
+.content-section {
+    margin-bottom: 5rem; 
+    scroll-margin-top: 100px;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.card {
+    background-color: var(--card-bg); 
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #2b2b2b;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.card:hover {
+    background-color: var(--hover-bg);
+    transform: translateY(-5px); 
+    cursor: pointer;
+}
+
+.card-header {
+    margin-bottom: 0.8rem;
+}
+
+.card-date {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    display: block; 
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.card-body p {
+    color: var(--text-secondary);
+    margin-top: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.tech-tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+}
+
+.tech-tags li {
+    background-color: #333333;
+    color: var(--accent-glow);
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.btn {
+    background-color: var(--text-primary);
+    color: var(--bg-color);
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 1.5rem;
+    border: 1px solid var(--text-primary);
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-icon {
+    width: 28px;
+    height: 28px;
+    color: var(--text-secondary);
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-links a:hover .social-icon {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 1024px) {
+    .navbar { padding: 1.5rem 2rem; }
+    .hero-content h1 { font-size: 6rem; }
+    .hero-content .hero-subtitle { font-size: 1.2rem; }
+    .content-wrapper { margin: 2rem auto; padding: 0 1.5rem; }
+    .section-title { font-size: 1.8rem; }
+    .card-title { font-size: 1.2rem; }
+}
+
+@media (max-width: 768px) {
+    .navbar { padding: 1rem 1.5rem; }
+    .hero-section { height: 80vh; }
+    .hero-content h1 { font-size: 3rem; }
+    .hero-content .hero-subtitle { font-size: 1rem; letter-spacing: 0.05em; }
+    .content-wrapper { padding: 0 1rem; }
+    .section-title { font-size: 1.5rem; margin-bottom: 1.5rem; }
+    .card { padding: 1rem; }
+    .card-title { font-size: 1.1rem; }
+    .card-date { font-size: 0.75rem; }
+    .card-body p { font-size: 0.9rem; }
+    .tech-tags { gap: 0.4rem; }
+    .tech-tags li { padding: 0.3rem 0.6rem; font-size: 0.75rem; }
+    .social-icon { width: 24px; height: 24px; }
+}
+
+/* ================================== */
+/* ESTILOS PARA MENU HAMBÚRGUER       */
+/* ================================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.mobile-nav-toggle { display: none; }
+
+@media (max-width: 768px) {
+    .navbar nav ul { display: none; }
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        z-index: 2000;
+        right: 1.5rem;
+        top: 1.5rem;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        width: 2em;
+        height: 2em;
+    }
+    .mobile-nav-toggle::before,
+    .mobile-nav-toggle::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--text-primary);
+        border-radius: 2px;
+        transition: transform 350ms ease-out, opacity 350ms ease;
+    }
+    .mobile-nav-toggle::before { transform: translateY(-8px); }
+    .mobile-nav-toggle::after { transform: translateY(8px); }
+    .mobile-nav-toggle[aria-expanded="true"]::before { transform: rotate(45deg); }
+    .mobile-nav-toggle[aria-expanded="true"]::after { transform: rotate(-45deg); }
+    .navbar nav {
+        position: fixed;
+        inset: 0 0 0 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 1500;
+        background: var(--bg-color); 
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+    }
+    .navbar nav[data-visible="true"] { transform: translateX(0%); }
+    .navbar nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    .navbar nav a { font-size: 1.2rem; }
+}
